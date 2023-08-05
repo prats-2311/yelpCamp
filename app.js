@@ -47,7 +47,7 @@ app.get("/campgrounds/:id/edit", async (req, res) => {
 app.patch("/campgrounds/:id", async (req, res) => {
   const { id } = req.params;
   const edit = req.body;
-  console.log(edit);
+  // console.log(edit);
   await Campground.findByIdAndUpdate(id, edit);
   res.redirect("/campgrounds");
 });

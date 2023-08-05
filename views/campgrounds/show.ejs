@@ -1,7 +1,42 @@
 <% layout('layouts/boilerplate') %>
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="card mb-3">
+      <img src="<%= foundCampground.image %>" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title"><%= foundCampground.title %></h5>
+        <p class="card-text"><%= foundCampground.description %></p>
+      </div>
 
-    <h1>Campground: <%= foundCampground.title %></h1>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-muted">
+          <%= foundCampground.location %>
+        </li>
+        <li class="list-group-item">$<%= foundCampground.price %>/night</li>
+      </ul>
+      <div class="card-body mb-3">
+        <a
+          href="/campgrounds/<%= foundCampground._id %>/edit"
+          class="card-link btn btn-info"
+          >Edit</a
+        >
+        <form
+          class="d-inline"
+          action="/campgrounds/<%= foundCampground._id %>?_method=DELETE"
+          method="post"
+        >
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+      <div class="card-footer text-muted">2 days ago</div>
+    </div>
+  </div>
+</div>
+
+<!-- <h1>Campground: <%= foundCampground.title %></h1>
     <h2>Location: <%= foundCampground.location %></h2>
+    <img src="<%= foundCampground.image %>" alt="">
+    <p><%= foundCampground.description %></p>
     <p>
     <a href="/campgrounds">Back</a>
     </p>
@@ -18,5 +53,4 @@
     </p>
     <footer>
       <a href="/campgrounds">All campgrounds</a>
-    </footer>
-
+    </footer> -->
