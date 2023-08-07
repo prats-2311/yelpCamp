@@ -28,15 +28,18 @@
     <form
       action="/campgrounds/<%= editCampground._id %>?_method=PATCH"
       method="post"
+      novalidate
+      class="validated-form"
     >
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
           type="text"
           id="title"
-          name="title"
+          name="campground[title]"
           class="form-control"
           value="<%= editCampground.title %>"
+          required
         />
       </div>
       <div class="mb-3">
@@ -44,9 +47,10 @@
         <input
           type="text"
           id="location"
-          name="location"
+          name="campground[location]"
           class="form-control"
           value="<%= editCampground.location %>"
+          required
         />
       </div>
       <div class="mb-3">
@@ -54,9 +58,10 @@
         <input
           type="text"
           id="image"
-          name="image"
+          name="campground[image]"
           class="form-control"
           value="<%= editCampground.image %>"
+          required
         />
       </div>
       <div class="mb-3">
@@ -70,8 +75,9 @@
             placeholder="0.00"
             aria-label="Username"
             aria-describedby="price"
-            name="price"
+            name="campground[price]"
             value="<%= editCampground.price %>"
+            required
           />
         </div>
       </div>
@@ -80,8 +86,9 @@
         <textarea
           type="text"
           id="description"
-          name="description"
+          name="campground[description]"
           class="form-control"
+          required
         >
 <%= editCampground.description %> </textarea
         >
