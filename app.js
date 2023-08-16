@@ -47,11 +47,11 @@ passport.deserializeUser(User.deserializeUser());
 app.use(flash());
 
 app.use((req, res, next) => {
+  // console.log(req.user);
   res.locals.currentUser = req.user;
   // res.locals.returnTo = req.session.returnTo;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
-
   next();
 });
 app.use("/", userRoutes);

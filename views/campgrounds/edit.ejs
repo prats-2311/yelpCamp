@@ -2,31 +2,31 @@
 
 <!-- <h1>Edit campground form</h1> -->
 <!-- <form
-  action="/campgrounds/<%= editCampground._id %>?_method=PATCH"
+  action="/campgrounds/<%= campground._id %>?_method=PATCH"
   method="post"
 >
   <label for="title">Title</label>
   <input
     type="text"
     id="title"
-    value="<%= editCampground.title %>"
+    value="<%= campground.title %>"
     name="title"
   />
   <label for="location">Location</label>
   <input
     type="text"
     id="location"
-    value="<%= editCampground.location %>"
+    value="<%= campground.location %>"
     name="location"
   />
   <button type="submit">Edit Campground</button>
 </form> -->
-<!-- <a href="/campgrounds/<%= editCampground._id %>">Back to Show</a> -->
+<!-- <a href="/campgrounds/<%= campground._id %>">Back to Show</a> -->
 <div class="row">
   <h1 class="text-center">Edit Campground</h1>
   <div class="col-6 offset-3">
     <form
-      action="/campgrounds/<%= editCampground._id %>?_method=PATCH"
+      action="/campgrounds/<%= campground._id %>?_method=PATCH"
       method="post"
       novalidate
       class="validated-form"
@@ -38,7 +38,7 @@
           id="title"
           name="campground[title]"
           class="form-control"
-          value="<%= editCampground.title %>"
+          value="<%= campground.title %>"
           required
         />
       </div>
@@ -49,7 +49,7 @@
           id="location"
           name="campground[location]"
           class="form-control"
-          value="<%= editCampground.location %>"
+          value="<%= campground.location %>"
           required
         />
       </div>
@@ -60,7 +60,7 @@
           id="image"
           name="campground[image]"
           class="form-control"
-          value="<%= editCampground.image %>"
+          value="<%= campground.image %>"
           required
         />
       </div>
@@ -76,7 +76,7 @@
             aria-label="Username"
             aria-describedby="price"
             name="campground[price]"
-            value="<%= editCampground.price %>"
+            value="<%= campground.price %>"
             required
           />
         </div>
@@ -90,7 +90,7 @@
           class="form-control"
           required
         >
-<%= editCampground.description %> </textarea
+<%= campground.description %> </textarea
         >
       </div>
 
@@ -99,6 +99,6 @@
       </div>
     </form>
 
-    <a href="/campgrounds/<%= editCampground._id %>">Back to Show</a>
+    <a href="/campgrounds/<%= campground._id %>">Back to Show</a>
   </div>
 </div>
