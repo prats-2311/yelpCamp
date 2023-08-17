@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+// console.log(process.env);
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -76,6 +80,6 @@ app.use((error, req, res, next) => {
   if (!error.message) error.message = "Oh No, Something went wrong";
   res.status(status).render("error", { error });
 });
-app.listen(3000, () => {
-  console.log("Serving on port 3000");
+app.listen(3500, () => {
+  console.log("Serving on port 3500");
 });

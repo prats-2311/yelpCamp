@@ -15,10 +15,19 @@ const seedDB = async () => {
     const random1000 = Math.floor(Math.random() * 1000);
     const price = Math.floor(Math.random() * 20) + 10;
     const camp = new campground({
-      author:'64db20d5482a9b738b58c8b5',
+      author: "64db20d5482a9b738b58c8b5",
       location: `${cities[random1000].city}, ${cities[random1000].state}`,
       title: `${sample(descriptors)} ${sample(places)}`,
-      image: "https://random.responsiveimages.io/v1/docs",
+      images: [
+        {
+          url: "https://res.cloudinary.com/dnxfw6jcd/image/upload/v1692211609/yelpCamp/swzfigurqpuosgxp7eqt.jpg",
+          filename: "yelpCamp/swzfigurqpuosgxp7eqt",
+        },
+        {
+          url: "https://res.cloudinary.com/dnxfw6jcd/image/upload/v1692211479/yelpCamp/i6yk7kqkhy2yqbkf0vny.jpg",
+          filename: "yelpCamp/i6yk7kqkhy2yqbkf0vny",
+        },
+      ],
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus",
       price,
