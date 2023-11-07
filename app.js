@@ -20,8 +20,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const sanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
-// const dbURL = process.env.DB_URL;
-const dbURL = "mongodb://127.0.0.1:27017/yelpCamp";
+const dbURL = process.env.DB_URL;
+// const dbURL = "mongodb://127.0.0.1:27017/yelpCamp";
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(dbURL);
